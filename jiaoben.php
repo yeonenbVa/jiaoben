@@ -28,12 +28,13 @@ function checkQuestion($topicId = "") {
             $tag_listes[] = $value["tag_code"];
         }
     }
-    $msg=$tag_codes_info = "tag_codes的数量 : " . count(array_unique($tag_listes)) . "\n";
+    $msg_info = "tag_codes的数量 : " . count(array_unique($tag_listes)) . "\n";
 //    var_dump($tag_codes_info);
 //    echo $path;
     //file_put_contents($path, $tag_codes_info, FILE_APPEND);
 //        var_dump(array_unique($tag_listes));die;
     $err_tag_code = [];
+    $question_ids=[];
     foreach (array_unique($tag_listes) as $key => $value) {
 //            var_dump($key);
         $tag_code = $value;
@@ -47,16 +48,16 @@ function checkQuestion($topicId = "") {
             $err_tag_code[] = $tag_code;
         }
     }
-    $msg.=$err_tag_code_info = "err_tag_codes的数量 : " . count($err_tag_code) . "\n";
+    $msg_info.= "err_tag_codes的数量 : " . count($err_tag_code) . "\n";
     if (count($err_tag_code)) {
-        $err_tag_code_info += "err_tag_codes的错误原因 : 知识点没题\n tag_code分别是:\n";
+        $msg_info .= "err_tag_codes的错误原因 : 知识点没题\n tag_code分别是:\n";
         foreach ($err_tag_code as $k) {
-            $err_tag_code_info += $k . "\n";
+            $msg_info .= $k . "\n";
         }
     }
     //file_put_contents($path, $err_tag_code_info, FILE_APPEND);
-    $msg.=$question_ids_info = "question_ids的数量 : " . count(array_unique($question_ids)) . "\n";
-    file_put_contents($path, $msg . FILE_APPEND);
+    $msg_info.= "question_ids的数量 : " . count(array_unique($question_ids)) . "\n";
+//    file_put_contents($path, $msg . FILE_APPEND);
     $ki = 0;
     $err_questions = [];
     foreach (array_unique($question_ids) as $key => $value) {
@@ -64,18 +65,18 @@ function checkQuestion($topicId = "") {
         $msg = getQuestionByIdAnalyse1($value);
 //            var_dump($question_msg);die;
         if ($msg) {
-            $questions_info = 'question_id为:' . $value . "----------" . "错误原因:" . $msg . "\n";
-            file_put_contents($path, $questions_info . FILE_APPEND);die;
+            $msg_info .= 'question_id为:' . $value . "----------" . "错误原因:" . $msg . "\n";
             $err_questions[$ki][] = $value;
             $err_questions[$ki][] = $msg;
         }
         $ki++;
-        if($ki>=2000){
-            break;
-        }
+//        if($ki>=2000){
+//            break;
+//        }
     }
-    $err_questions_info = "question_ids错误的数量 : " . count($err_questions);
-    file_put_contents($path, $err_questions_info . FILE_APPEND);
+    $msg_info .= "question_ids错误的数量 : " . count($err_questions);
+    file_put_contents($path, $msg_info . FILE_APPEND);
+    echo 'over';
     die;
 }
 
