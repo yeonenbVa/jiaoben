@@ -25,6 +25,7 @@ function checkQuestion($topicId = "") {
     foreach ($kmap_codes as $k => $val) {
         $tag_codes = getKmapInfoByKmapCode($val);
         foreach ($tag_codes as $key => $value) {
+
             $tag_listes[] = $value["tag_code"];
         }
     }
@@ -75,7 +76,7 @@ function checkQuestion($topicId = "") {
 //        }
     }
     $msg_info .= "question_ids错误的数量 : " . count($err_questions);
-    file_put_contents($path, $msg_info . FILE_APPEND);
+    file_put_contents($path, $msg_info ,FILE_APPEND);
     echo 'over';
     die;
 }

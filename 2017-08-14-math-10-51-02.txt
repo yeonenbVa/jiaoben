@@ -1,0 +1,22 @@
+tag_codes的数量 : 719
+err_tag_codes的数量 : 10
+err_tag_codes的错误原因 : 知识点没题
+ tag_code分别是:
+mh_q7_01_01_01
+mh_q7_01_01_02
+mh_q7_01_01_03
+mh_q7_01_01_04
+mh_q7_01_02_01
+mh_q7_01_02_02
+mh_q7_01_02_03
+mh_q7_01_02_04
+mh_q7_01_03_01
+mh_q7_01_03_02
+question_ids的数量 : 20802
+question_id为:97249986588180568----------错误原因:错误==试题内容为null
+错误==试题类型null或为空
+错误==试题没有正确答案
+
+question_id为:58b3bb06f4aeb564c17f181c----------错误原因:分布解析为null
+
+question_ids错误的数量 : 28

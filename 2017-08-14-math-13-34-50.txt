@@ -1,0 +1,16 @@
+tag_codes的数量 : 10
+err_tag_codes的数量 : 10
+err_tag_codes的错误原因 : 知识点没题
+ tag_code分别是:
+mh_q7_01_01_01
+mh_q7_01_01_02
+mh_q7_01_01_03
+mh_q7_01_01_04
+mh_q7_01_02_01
+mh_q7_01_02_02
+mh_q7_01_02_03
+mh_q7_01_02_04
+mh_q7_01_03_01
+mh_q7_01_03_02
+question_ids的数量 : 0
+question_ids错误的数量 : 08
